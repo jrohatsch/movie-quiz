@@ -20,7 +20,7 @@ const VirtualKeyBoard = ({ onKeyPress, disable }) => {
     } else if(allowed_chars.includes(key)){
         onKeyPress(key)
     }
-  },[onKeyPress]);
+  },[onKeyPress,disable]);
 
   React.useEffect(() => {
     document.addEventListener("keydown", handleRealKeyBoard);

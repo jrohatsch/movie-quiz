@@ -1,8 +1,7 @@
 import React from "react";
-import { resultType } from "./Game";
+import resultType from "./resultTypes";
 
 const GameEndModal = ({ results, onCloseCallback }) => {
-  const [userCopied, setUserCopied] = React.useState(false);
   let correct_results = 0;
   let skipped_results = 0;
   let failed_results = 0;
@@ -20,35 +19,6 @@ const GameEndModal = ({ results, onCloseCallback }) => {
   let success_sum = resultType.success.value * correct_results;
   let skipped_sum = resultType.skipped.value * skipped_results;
   let failed_sum = resultType.failed.value * failed_results;
-
-  // const copyToClipboard = () => {
-  //   let buffer = "";
-
-  //   results.forEach((eachResult) => {
-  //     buffer += eachResult.render;
-  //   });
-
-  //   buffer += " ";
-
-  //   buffer +=
-  //     "I got " + String(success_sum + skipped_sum + failed_sum) + " points on ";
-
-  //   buffer += "https://whichmovieisthat.com";
-
-  //   navigator.clipboard.writeText(buffer).then(
-  //     function () {
-  //       console.log("Async: Copying to clipboard was successful!");
-  //       setUserCopied(true);
-  //       let timer = setTimeout(() => {
-  //         setUserCopied(false);
-  //         clearTimeout(timer);
-  //       }, 2000);
-  //     },
-  //     function (err) {
-  //       console.error("Async: Could not copy text: ", err);
-  //     }
-  //   );
-  // };
 
   return (
     <div className="GameEndModalContainer">
@@ -75,7 +45,7 @@ const GameEndModal = ({ results, onCloseCallback }) => {
       </div>
       <br></br>
       <h2>Score</h2>
-      <h1>{success_sum + skipped_sum + failed_sum}</h1>
+      <h1>{success_sum + skipped_sum + failed_sum + ' Points'}</h1>
       <div
         style={{
           display: "flex",

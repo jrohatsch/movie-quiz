@@ -35,11 +35,11 @@
 .NextRound{
   margin-left: 10px;
   width: auto;
-  border-color: blue;
+  border-color: skyblue;
 }
 
 .NextRound:active {
-  background: blue;
+  background: skyblue;
 }
 
 .NextRound:disabled {
@@ -148,7 +148,7 @@
 }
 
 .Key{
-  border: rgb(255, 177, 60) solid 2px;
+  border: darksalmon solid 2px;
   width: 25px;
   height: 35px;
   align-items: center;
@@ -165,7 +165,7 @@
 }
 
 .Key:active{
-  background-color: rgb(255, 177, 60);
+  background-color: darksalmon;
 }
 
 .TitleBox{
@@ -203,8 +203,33 @@
   text-align: right;
 }
 
+.ResultSquaresContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.ResultSquare {
+  width: 50px;
+  height: 25px;
+  border: black 2px solid;
+  margin: 5px;
+  box-shadow: rgb(0, 0, 0, 0.2) 0 -10px 5px -1px inset;
+}
+
+.ResultSquareCorrect {
+  background-color: #01ce01;
+}
+
+.ResultSquareIncorrect {
+  background-color: red;
+}
+
+.ResultSquareSkipped {
+  background-color: skyblue;
+}
+
 body{
-  background-color: wheat;
+  background-color: darksalmon;
   user-select: none;
 }
 

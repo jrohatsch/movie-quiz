@@ -3,23 +3,10 @@ import React from "react";
 import movie_data from "./movie_data.json";
 import GuessByPlot from "./GuessByPlot";
 import GameEndModal from "./GameEndModal";
+import resultType from "./resultTypes";
 
 const MAX_ROUNDS = 5;
 
-export const resultType = Object.freeze({
-  success: {
-    value: 100,
-    render: "🤓",
-  },
-  failed: {
-    value: -75,
-    render: "🤦",
-  },
-  skipped: {
-    value: -25,
-    render: "😴"
-  }
-});
 
 const Game = () => {
   const [movieData, setMovieData] = React.useState({ title: "", plot: "" });

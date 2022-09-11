@@ -4,6 +4,7 @@ import VirtualKeyBoard from "./VirtualKeyBoard";
 import SuggestedTitle from "./SuggestedTitle";
 import NextRoundButton from "./NextRoundButton";
 import { useNavigate } from "react-router-dom";
+import ResultList from "./ResultList";
 
 const GuessByPlot = ({
   title,
@@ -101,14 +102,12 @@ const GuessByPlot = ({
         <SuggestedTitle input={inputTitle} onSelect={onSuggestSelect} />
       </div>
 
-      <div style={{ display: "relative", flexGrow: 1 }}>
+      <div style={{ display: "relative", flexGrow: 1, maxHeight: '50vh', overflow: 'auto' }}>
         <div className="PlotWrapper">{plot}</div>
       </div>
 
       <div className="Results">
-        {results.map((eachResult, index) => (
-          <div key={index}>{eachResult.render}</div>
-        ))}
+        <ResultList results={results} />
       </div>
 
       <div className="ButtonGroupGame">
