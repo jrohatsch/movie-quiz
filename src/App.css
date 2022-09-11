@@ -1,0 +1,224 @@
+.App {
+  text-align: center;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  height: 100vh;
+  background-color: whitesmoke;
+  border-bottom-right-radius: 12.5px;
+  border-bottom-left-radius: 12.5px;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.Button {
+  font-size: larger;
+  font-weight: bolder;
+  border: #01ce01 solid 2px;
+  color: black;
+  width: 230px;
+  height: 35px;
+  margin: 0.2vw;
+  background: none;
+}
+
+.Button:active{
+  background: #01ce01;
+}
+
+.NextRound{
+  margin-left: 10px;
+  width: auto;
+  border-color: blue;
+}
+
+.NextRound:active {
+  background: blue;
+}
+
+.NextRound:disabled {
+  opacity: 0.4;
+  background: none !important;
+}
+
+.NextRound:focus {
+  outline: none;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.PlotWrapper{
+  height: 35vh;
+  padding: 5vw;
+  padding-top: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  display: table-cell;
+  width: 80vw;
+  height: 200px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  vertical-align: middle;
+}
+
+.Input{
+    font-size: small;
+    letter-spacing: 3px;
+    text-align: center;
+    width: 100%;
+}
+
+.ClearInputButton{
+  width: 20px;
+  border: red solid 2px;
+  margin-right: 4px;
+}
+
+.Results{
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.Suggested {
+  position: absolute;
+  top: auto;
+  top: 100%;
+  background: snow;
+  border: black solid 2px;
+  border-top: none;
+  width: 99%;
+}
+
+.CloseButton{
+  padding: 5px;
+  background: rgb(255 73 73);
+}
+
+.SuggestedTitle {
+  padding: 1rem;
+}
+.Separator{
+  border: black solid 1px;
+}
+.Wrap{
+  position: relative;
+  /* text-align: center; */
+  /* width: 8 */
+}
+
+.KeyBoard {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ButtonGroupGame {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+.Key{
+  border: rgb(255, 177, 60) solid 2px;
+  width: 25px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.Delete {
+  border-color: red;
+}
+
+.Delete:active {
+  background-color: red !important;
+}
+
+.Key:active{
+  background-color: rgb(255, 177, 60);
+}
+
+.TitleBox{
+  border: black solid 2px;
+  background-color: snow;
+  height: 32px;
+  width: 80vw;
+  overflow: auto;
+  display: flex;
+  max-width: 400px;
+  align-content: stretch;
+  align-items: center;
+}
+
+.GameEndModalContainer{
+  z-index: 200;
+  position: absolute;
+  top: 120px;
+  width: 90%;
+  background: snow;
+  border: 2px solid black;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.PointsContainer{
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.PointsResult{
+  flex-grow: 1;
+  text-align: right;
+}
+
+body{
+  background-color: wheat;
+  user-select: none;
+}
+
+h2 {
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+.GameDescriptionContainer{
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.GameDescriptionButtonContainer{
+    flex-grow: 1;
+}
