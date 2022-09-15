@@ -1,11 +1,11 @@
-import "./App.css";
 import React from "react";
-import movie_data from "./movie_data.json";
 import GuessByPlot from "./GuessByPlot";
 import GameEndModal from "./GameEndModal";
 import resultType from "./resultTypes";
 
 const MAX_ROUNDS = 5;
+
+const movie_data = require("./movie_data.json");
 
 
 const Game = () => {

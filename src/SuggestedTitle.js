@@ -1,8 +1,7 @@
 import React from "react";
-import movie_data from "./movie_data.json";
 import { allowed_chars } from "./VirtualKeyBoard";
 
-const movie_data_array = Object.values(movie_data);
+const movie_data_array = Object.values(require("./movie_data.json"));
 
 const SuggestedTitle = ({ input, onSelect }) => {
   const [suggestions, setSuggestions] = React.useState([]);

@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import VirtualKeyBoard from "./VirtualKeyBoard";
 import SuggestedTitle from "./SuggestedTitle";
 import NextRoundButton from "./NextRoundButton";
@@ -15,6 +14,7 @@ const GuessByPlot = ({
   onNextRoundCallback,
   results,
   disableInput,
+  movieData
 }) => {
   const [showTitle, setShowTitle] = React.useState(false);
   const [inputTitle, setInputTitle] = React.useState("");
@@ -67,7 +67,7 @@ const GuessByPlot = ({
   }
 
   const newRound = () => {
-    if(guessed){
+    if (guessed) {
       onNextRoundCallback();
     } else {
       onSkipCallback();
@@ -76,7 +76,19 @@ const GuessByPlot = ({
     setGuessed(false);
     setShowTitle(false);
     setInputTitle("");
+  };
+
+  let mainButtonText="Skip";
+  let mainButtonOnClick=newRound;
+
+  if(inputTitle !== "" && guessed === false){
+    mainButtonText = "Guess";
+    mainButtonOnClick=checkInput;
   }
+  if(guessed){
+    mainButtonText="Next";
+  }
+
 
   return (
     <div className="App">
@@ -92,40 +104,39 @@ const GuessByPlot = ({
           >
             {displayedTitle}
           </div>
-          {
-            isPlaceholder === false && guessed === false &&
-            <div className="ClearInputButton" onClick={()=>setInputTitle("")}>
-            X
-          </div>
-          }
+          {isPlaceholder === false && guessed === false && (
+            <div className="ClearInputButton" onClick={() => setInputTitle("")}>
+              X
+            </div>
+          )}
         </div>
-        <SuggestedTitle input={inputTitle} onSelect={onSuggestSelect} />
+        <SuggestedTitle input={inputTitle} onSelect={onSuggestSelect} movieData={movieData} />
       </div>
 
-      <div style={{ display: "relative", flexGrow: 1, maxHeight: '50vh', overflow: 'auto' }}>
+      <div
+        style={{
+          display: "relative",
+          flexGrow: 1,
+          maxHeight: "50vh",
+          overflow: "auto",
+        }}
+      >
         <div className="PlotWrapper">{plot}</div>
       </div>
 
-      <div className="Results">
-        <ResultList results={results} />
-      </div>
+      <div>
+        <div className="Results">
+          <ResultList results={results} />
+        </div>
 
-      <div className="ButtonGroupGame">
-        <button
-          className="Button"
-          onClick={() => checkInput()}
-          disabled={guessed || disableInput}
-        >
-          {"Guess"}
-        </button>
         <NextRoundButton
-          onClick={newRound}
-          text={guessed ? "Next" : "Skip"}
+          onClick={mainButtonOnClick}
+          text={mainButtonText}
           disabled={disableInput}
         />
       </div>
 
-      <VirtualKeyBoard onKeyPress={onKeyPress} disable={disableInput}/>
+      <VirtualKeyBoard onKeyPress={onKeyPress} disable={disableInput} />
     </div>
   );
 };

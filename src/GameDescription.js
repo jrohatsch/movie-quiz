@@ -1,6 +1,5 @@
 import React from "react";
 import StartGameButton from "./StartGameButton";
-import movie_data from "./movie_data.json";
 
 const GameDescription = () => {
   return (
@@ -17,10 +16,6 @@ const GameDescription = () => {
         <br></br>
         <br></br>
         <b>3.</b> After five Rounds your score is evaluated, share with friends!
-      </p>
-      <p>
-        There are currently <b>{Object.keys(movie_data).length}</b> movies in
-        the database waiting for you!
       </p>
       <p>Good luck!</p>
 
